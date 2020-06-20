@@ -504,10 +504,10 @@
 			}
 
 			if (nowuserdata.answers) {
-				tempjson.answers[mydata[nowquestionid]] = myanswer
+				tempjson.answers[mydata[nowquestionid].id] = myanswer
 			} else {
 				tempjson.answers = {}
-				tempjson.answers[mydata[nowquestionid]] = myanswer
+				tempjson.answers[mydata[nowquestionid].id] = myanswer
 			}
 
 
