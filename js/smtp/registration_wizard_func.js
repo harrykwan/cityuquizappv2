@@ -1,7 +1,7 @@
 	/*  Wizard */
 	jQuery(function ($) {
 		"use strict";
-		$('form#wrapped').attr('action', 'smtp/registration_send.php');
+		// $('form#wrapped').attr('action', 'smtp/registration_send.php');
 		$("#wizard_container").wizard({
 			stepsWrapper: "#wrapped",
 			submit: ".submit",
@@ -32,11 +32,12 @@
 			}
 		});
 		/* Submit loader mask */
-		$('form').on('submit',function() {
+		$('form').on('submit', function () {
 			var form = $("form#wrapped");
 			form.validate();
 			if (form.valid()) {
 				$("#loader_form").fadeIn();
 			}
+			return false
 		});
 	});
