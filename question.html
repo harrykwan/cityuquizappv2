@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<meta name="description" content="MAVIA - Register, Reservation, Questionare, Reviews form wizard">
+	<meta name="description" content="">
 	<meta name="author" content="Ansonika">
 	<title>心理測驗</title>
 
@@ -117,8 +117,7 @@
 							<li id="usernameshow"></li>
 							<li><a href="index.html" class="animated_link">主頁</a></li>
 							<li><a href="" class="animated_link">English</a></li>
-							<li><a href="" class="animated_link">中文</a></li>
-							<li><a href="" class="animated_link">登出</a></li>
+							<li><a onclick="logout()" class="animated_link">登出</a></li>
 						</ul>
 					</nav>
 				</div>
@@ -520,6 +519,15 @@
 
 
 
+		}
+
+		function logout() {
+			$("#loader_form").fadeIn();
+			firebase.auth().signOut().then(function () {
+				// Sign-out successful.
+			}).catch(function (error) {
+				// An error happened.
+			});
 		}
 	</script>
 
